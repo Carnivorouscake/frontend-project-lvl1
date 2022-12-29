@@ -1,11 +1,11 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import readlineSync from 'readline-sync';
 
-// eslint-disable-next-line import/extensions
-import sayHello from '../src/cli.js';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import welcome from './index.js';
 
-sayHello(readlineSync);
-// eslint-disable-next-line no-console
+const name = welcome();
+
 const getRandomNum = () => Math.round(Math.random() * 100);
 // eslint-disable-next-line consistent-return
 const getAction = (a, b) => {
@@ -33,19 +33,19 @@ const startRound = () => {
     const equation = getAction(a, b);
     // eslint-disable-next-line no-eval
     const result = eval(equation);
+    // eslint-disable-next-line no-alert, no-console
+    console.log(`Question:  ${equation}`);
     // eslint-disable-next-line no-alert
-    alert(`Question:  ${equation}`);
-    // eslint-disable-next-line no-alert
-    const answer = prompt('Your answer:');
+    const answer = readlineSync.question('Your answer:');
     // eslint-disable-next-line no-inner-declarations, no-shadow
     function getAnswer(Sum, answer) {
       if (Number(answer) === Sum) {
-        // eslint-disable-next-line no-alert
-        alert('Correct!');
+        // eslint-disable-next-line no-alert, no-console
+        console.log('Correct!');
         return true;
       }
-      // eslint-disable-next-line no-alert
-      alert(`Question:${equation} \nYour answer: ${answer} \n'${answer}' is wrong answer ;(. Correct answer was '${result}' \nLet's try again, ${readlineSync}`);
+      // eslint-disable-next-line no-alert, no-console
+      console.log(`Question:${equation} \nYour answer: ${answer} \n'${answer}' is wrong answer ;(. Correct answer was '${result}' \nLet's try again, ${name}`);
       return false;
     }
     const isCorrect = getAnswer(result, answer);
@@ -55,8 +55,8 @@ const startRound = () => {
     }
   }
   if (flag === false) {
-    // eslint-disable-next-line no-alert
-    alert(`Congratulations, ${readlineSync}!`);
+    // eslint-disable-next-line no-alert, no-console
+    console.log(`Congratulations, ${readlineSync}!`);
   }
 };
 startRound();
