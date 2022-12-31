@@ -3,4 +3,9 @@
 
 
 Maintainability Badge:
-<a href="https://codeclimate.com/github/Carnivorouscake/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/1f754f47efdd2a05b631/maintainability" /></a>
+<a href="https://codeclimate.com/github/Carnivorouscake/frontend-project-lvl1/maintainability">
+  <img src="https://api.codeclimate.com/v1/badges/1f754f47efdd2a05b631/maintainability" /></a>
+brain-calc:
+[![asciicast](https://asciinema.org/a/oAylkqGJaBlGnwT06P59geb4b.svg)](https://asciinema.org/a/oAylkqGJaBlGnwT06P59geb4b)
+brain-gcd:
+[![asciicast](https://asciinema.org/a/l960lBMQvXdomg1iPqjKKxiiq.svg)](https://asciinema.org/a/l960lBMQvXdomg1iPqjKKxiiq)
