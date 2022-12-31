@@ -44,7 +44,7 @@ const startRound = () => {
 
   if (!flag) {
     // eslint-disable-next-line no-alert, no-template-curly-in-string, no-console
-    console.log('Congratulations, ${readlineSync}!');
+    console.log('Congratulations, ${name}!');
   }
 };
 

@@ -56,7 +56,7 @@ const startRound = () => {
   }
   if (flag === false) {
     // eslint-disable-next-line no-alert, no-console
-    console.log(`Congratulations, ${readlineSync}!`);
+    console.log(`Congratulations, ${name}!`);
   }
 };
 startRound();
