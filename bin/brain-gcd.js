@@ -13,7 +13,7 @@ const getRandomNum = () => Math.round(Math.random() * 100);
 
 const startRound = () => {
   let flag = false;
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     const a = getRandomNum();
     const b = getRandomNum();
     // eslint-disable-next-line no-shadow
