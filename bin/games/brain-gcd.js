@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/no-unresolved, import/extensions
-import welcome from './index.js';
+import welcome from '../index.js';
 
 // eslint-disable-next-line no-unused-vars
 const name = welcome();

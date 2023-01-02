@@ -2,7 +2,7 @@
 import readlineSync from 'readline-sync';
 
 // eslint-disable-next-line import/no-unresolved, import/extensions
-import welcome from './index.js';
+import welcome from '../index.js';
 
 // eslint-disable-next-line no-unused-vars
 const name = welcome();
@@ -14,11 +14,11 @@ function getRandomNum() {
 }
 const startRound = () => {
   let flag = false;
-  // eslint-disable-next-line no-unreachable-loop
+  // eslint-disable-next-line no-unreachable-loop, no-plusplus
   for (let i = 0; i < 3; i++) {
     const num = getRandomNum();
     const getPrime = () => {
-    // eslint-disable-next-line no-unreachable-loop, no-undef
+    // eslint-disable-next-line no-unreachable-loop, no-undef, no-plusplus, no-shadow
       for (let i = 2; num > i; i ++) {
         // eslint-disable-next-line no-undef, eqeqeq
         if (num % i == 0) {

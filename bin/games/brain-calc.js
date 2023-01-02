@@ -2,7 +2,7 @@
 import readlineSync from 'readline-sync';
 
 // eslint-disable-next-line import/no-unresolved, import/extensions
-import welcome from './index.js';
+import welcome from '../index.js';
 
 const name = welcome();
 
