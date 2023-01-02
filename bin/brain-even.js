@@ -5,8 +5,11 @@ import readlineSync from 'readline-sync';
 import welcome from './index.js';
 
 const name = welcome();
-
-const getRandomNum = () => Math.round(Math.random() * 100);
+// eslint-disable-next-line no-console
+console.log('Answer "yes" if the number is even, otherwise answer "no".');
+function getRandomNum() {
+  return Math.round(Math.random() * 100);
+}
 const isEven = (num) => {
   if (num % 2 === 0) {
     return 'yes';
@@ -30,11 +33,10 @@ const startRound = () => {
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < 3; i++) {
     const num = getRandomNum();
+    // eslint-disable-next-line no-alert, no-console, no-template-curly-in-string
+    console.log(`Question: ${num}`);
     // eslint-disable-next-line no-alert, no-console
-    console.log(num);
-    // eslint-disable-next-line no-alert
-    const answer = readlineSync.question('Answer "yes" if the number is even, otherwise answer "no".');
-
+    const answer = readlineSync.question('Your answer:');
     const isEvenString = isEven(num);
     const isCorrect = correctAnswer(isEvenString, answer);
     if (!isCorrect) {
@@ -44,7 +46,7 @@ const startRound = () => {
 
   if (!flag) {
     // eslint-disable-next-line no-alert, no-template-curly-in-string, no-console
-    console.log('Congratulations, ${name}!');
+    console.log(`Congratulations, ${name}!`);
   }
 };
 
