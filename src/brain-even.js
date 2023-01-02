@@ -44,6 +44,7 @@ const startRound = () => {
     const isCorrect = correctAnswer(isEvenString, answer);
     if (!isCorrect) {
       flag = true;
+      return;
     }
   }
 
