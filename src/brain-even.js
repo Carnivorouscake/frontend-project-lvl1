@@ -28,7 +28,7 @@ const startRound = () => {
       return true;
     }
     // eslint-disable-next-line no-alert, no-console
-    console.log(`${answer} is wrong answer ;(. Correct answer was ${isEvenString} Let's try again, \n ${name}`);
+    console.log(`${answer} is wrong answer ;(. Correct answer was ${isEvenString} \nLet's try again, ${name}`);
     return false;
   };
 
