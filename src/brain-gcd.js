@@ -47,7 +47,7 @@ const startRound = () => {
         return true;
       }
       // eslint-disable-next-line no-alert, no-console
-      console.log(`Question:${a} ${b} \nYour answer: ${answer} \n'${answer}' is wrong answer ;(. Correct answer was '${result}' \nLet's try again, ${name}`);
+      console.log(`Question:${a} ${b} \nYour answer: ${answer} \n'${answer}' is wrong answer ;(. Correct answer was '${result}' \nLet's try again, ${name}!`);
       return false;
     }
     const isCorrect = getAnswer(result, answer);

@@ -40,7 +40,7 @@ const startRound = () => {
         return true;
       }
       // eslint-disable-next-line no-console
-      console.log(`Question:${num} \nYour answer: ${answer} \n'${answer}' is wrong answer ;(. Correct answer was '${result}' \nLet's try again, ${name}`);
+      console.log(`Question:${num} \nYour answer: ${answer} \n'${answer}' is wrong answer ;(. Correct answer was '${result}' \nLet's try again, ${name}!`);
       return false;
     };
     const isCorrect = getAnswer(answer, result);
