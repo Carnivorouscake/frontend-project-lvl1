@@ -7,7 +7,8 @@ import readlineSync from 'readline-sync';
 import welcome from './index.js';
 
 const name = welcome();
-
+// eslint-disable-next-line no-console
+console.log('What is the result of the expression?');
 const startRound = () => {
   const getRandomNum = () => Math.round(Math.random() * 100);
   const getAction = () => {
