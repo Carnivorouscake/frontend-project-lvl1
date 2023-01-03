@@ -28,8 +28,7 @@ const startRound = () => {
     const action = getAction();
     const a = getRandomNum();
     const b = getRandomNum();
-    // eslint-disable-next-line consistent-return
-    const getResult = () => {
+    const getResult = (a, b, action) => {
       if (action === '+') {
         return a + b;
       }
@@ -42,7 +41,7 @@ const startRound = () => {
     };
     const result = getResult(a, b, action);
     // eslint-disable-next-line no-console
-    console.log(`Question:${a} ${action} ${b}`);
+    console.log(`Question: ${a} ${action} ${b}`);
     const answer = readlineSync.question('Your answer:');
     function getAnswer(Sum, answeres) {
       if (Number(answeres) === Sum) {
