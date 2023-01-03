@@ -1,51 +1,57 @@
 #!/usr/bin/env node
+/* eslint-disable no-inner-declarations */
 // eslint-disable-next-line import/no-extraneous-dependencies
 import readlineSync from 'readline-sync';
 
-// eslint-disable-next-line import/no-unresolved, import/extensions
+// eslint-disable-next-line import/extensions
 import welcome from './index.js';
 
-const startRound = () => {
-  const name = welcome();
+const name = welcome();
 
+const startRound = () => {
   const getRandomNum = () => Math.round(Math.random() * 100);
-  // eslint-disable-next-line consistent-return
-  const getAction = (a, b) => {
-    const act = Math.floor(Math.random() * 4);
+  const getAction = () => {
+    const act = Math.floor(Math.random() * 3);
     if (act === 0) {
-      return `${a} + ${b}`;
+      return '+';
     }
     if (act === 1) {
-      return `${a} - ${b}`;
+      return '-';
     }
     if (act === 2) {
-      return `${a} * ${b}`;
-    }
-    if (act === 3) {
-      return `${a * b} / ${b}`;
+      return '*';
     }
   };
   let flag = false;
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < 3; i++) {
+    const action = getAction();
     const a = getRandomNum();
     const b = getRandomNum();
-    const equation = getAction(a, b);
-    // eslint-disable-next-line no-eval
-    const result = eval(equation);
-    // eslint-disable-next-line no-alert, no-console
-    console.log(`Question:  ${equation}`);
-    // eslint-disable-next-line no-alert
+    // eslint-disable-next-line consistent-return
+    const getResult = () => {
+      if (action === '+') {
+        return a + b;
+      }
+      if (action === '-') {
+        return a - b;
+      }
+      if (action === '*') {
+        return a * b;
+      }
+    };
+    const result = getResult(a, b, action);
+    // eslint-disable-next-line no-console
+    console.log(`Question:${a} ${action} ${b}`);
     const answer = readlineSync.question('Your answer:');
-    // eslint-disable-next-line no-inner-declarations, no-shadow
-    function getAnswer(Sum, answer) {
-      if (Number(answer) === Sum) {
-        // eslint-disable-next-line no-alert, no-console
+    function getAnswer(Sum, answeres) {
+      if (Number(answeres) === Sum) {
+        // eslint-disable-next-line no-console
         console.log('Correct!');
         return true;
       }
       // eslint-disable-next-line no-alert, no-console
-      console.log(`Question:${equation} \nYour answer: ${answer} \n'${answer}' is wrong answer ;(. Correct answer was '${result}' \nLet's try again, ${name}`);
+      console.log(`Question:${a} ${action} ${b} \nYour answer: ${answer} \n'${answer}' is wrong answer ;(. Correct answer was '${result}' \nLet's try again, ${name}`);
       return false;
     }
     const isCorrect = getAnswer(result, answer);
