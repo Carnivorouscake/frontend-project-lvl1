@@ -21,7 +21,7 @@ const startRound = () => {
       if (num < 2) {
         return 'no';
       }
-      for (let index = 2; num > i; i += 1) {
+      for (let index = 2; num > index; index += 1) {
         if (num % index === 0) {
           return 'no';
         }
