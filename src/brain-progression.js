@@ -35,7 +35,7 @@ const startRound = () => {
 // eslint-disable-next-line no-unused-vars
     const str = ethalon.map((x, i) => (i === hole ? '..' : x)).join(' ');
     // eslint-disable-next-line no-console
-    console.log(`Question:  ${str}`);
+    console.log(`Question: ${str}`);
     // eslint-disable-next-line no-alert
     const answer = readlineSync.question('Your answer:');
     // eslint-disable-next-line no-inner-declarations, no-shadow, no-loop-func
