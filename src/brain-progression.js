@@ -11,7 +11,7 @@ const startRound = () => {
   // eslint-disable-next-line no-console
   console.log('What number is missing in the progression?');
   const getRandomNum = () => Math.round(Math.random() * 100);
-  const getStep = () => Math.round((Math.random()) * 10);
+  const getStep = () => Math.round(Math.random() * 10) + 1;
   let flag = false;
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < 3; i++) {
