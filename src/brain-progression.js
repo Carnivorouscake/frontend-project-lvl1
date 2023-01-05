@@ -4,9 +4,10 @@ import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import welcome from './index.js';
 
-const name = welcome();
+
 
 const startRound = () => {
+  const name = welcome();
   // eslint-disable-next-line no-console
   console.log('What number is missing in the progression?');
   const getRandomNum = () => Math.round(Math.random() * 100);
