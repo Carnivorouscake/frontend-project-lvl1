@@ -1,10 +1,9 @@
 #!/usr/bin/env node
+/* eslint-disable no-shadow */
 // eslint-disable-next-line import/no-extraneous-dependencies
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import welcome from './index.js';
-
-
 
 const startRound = () => {
   const name = welcome();
@@ -32,13 +31,12 @@ const startRound = () => {
     const hole = Math.round(Math.random() * 10);
     // eslint-disable-next-line no-unused-vars
     const ethalonAnswer = ethalon[hole];
-// eslint-disable-next-line no-unused-vars
-    const str = ethalon.map((x, i) => (i === hole ? '..' : x)).join(' ');
+    const str = ethalon.map((x, index) => (index === hole ? '..' : x)).join(' ');
     // eslint-disable-next-line no-console
     console.log(`Question: ${str}`);
     // eslint-disable-next-line no-alert
     const answer = readlineSync.question('Your answer:');
-    // eslint-disable-next-line no-inner-declarations, no-shadow, no-loop-func
+    // eslint-disable-next-line no-inner-declarations
     function getAnswer(Sum, answer) {
       if (Number(answer) === Sum) {
         // eslint-disable-next-line no-alert, no-console

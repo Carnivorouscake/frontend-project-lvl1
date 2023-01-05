@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-// eslint-disable-next-line import/no-extraneous-dependencies
+
 import readlineSync from 'readline-sync';
 
 // eslint-disable-next-line import/extensions
-import welcome from '../src/index.js';
+import welcome from './index.js';
 
 const name = welcome();
 // eslint-disable-next-line no-console

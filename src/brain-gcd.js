@@ -3,6 +3,7 @@
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import welcome from './index.js';
+
 const name = welcome();
 
 const startRound = () => {

@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+/* eslint-disable no-unused-vars */
+/* eslint-disable consistent-return */
 /* eslint-disable no-inner-declarations */
 // eslint-disable-next-line import/no-extraneous-dependencies
 import readlineSync from 'readline-sync';
@@ -29,7 +31,7 @@ const startRound = () => {
     const action = getAction();
     const a = getRandomNum();
     const b = getRandomNum();
-    const getResult = (a, b, action) => {
+    function getResult(_first, _second, _act) {
       if (action === '+') {
         return a + b;
       }
@@ -39,7 +41,7 @@ const startRound = () => {
       if (action === '*') {
         return a * b;
       }
-    };
+    }
     const result = getResult(a, b, action);
     // eslint-disable-next-line no-console
     console.log(`Question: ${a} ${action} ${b}`);

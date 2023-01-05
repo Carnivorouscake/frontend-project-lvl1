@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-plusplus */
 // eslint-disable-next-line import/no-extraneous-dependencies
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/no-unresolved, import/extensions
@@ -14,23 +15,22 @@ const startRound = () => {
     return Math.round(Math.random() * 10) + 1;
   }
   let flag = false;
-  // eslint-disable-next-line no-unreachable-loop, no-plusplus
   for (let i = 0; i < 3; i++) {
     const num = getRandomNum();
     const getPrime = () => {
       if (num < 2) {
         return 'no';
       }
-      for (let i = 2; num > i; i += 1) {
-        if (num % i === 0) {
+      for (let index = 2; num > i; i += 1) {
+        if (num % index === 0) {
           return 'no';
         }
       }
       return 'yes';
-   };
+    };
     // eslint-disable-next-line no-unused-vars
     const result = getPrime();
-// eslint-disable-next-line no-console
+    // eslint-disable-next-line no-console
     console.log(`Question: ${num}`);
     const answer = readlineSync.question('Your answer:');
     // eslint-disable-next-line no-shadow
