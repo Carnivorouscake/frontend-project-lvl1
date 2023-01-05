@@ -11,22 +11,23 @@ const startRound = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   // eslint-disable-next-line no-unused-vars
   function getRandomNum() {
- return Math.round(Math.random() * 10);
-}
+    return Math.round(Math.random() * 10) + 1;
+  }
   let flag = false;
   // eslint-disable-next-line no-unreachable-loop, no-plusplus
   for (let i = 0; i < 3; i++) {
     const num = getRandomNum();
     const getPrime = () => {
-    // eslint-disable-next-line no-unreachable-loop, no-undef, no-plusplus, no-shadow
-      for (let i = 2; num > i; i ++) {
-        // eslint-disable-next-line no-undef, eqeqeq
-        if (num % i == 0) {
+      if (num < 2) {
+        return 'no';
+      }
+      for (let i = 2; num > i; i += 1) {
+        if (num % i === 0) {
           return 'no';
         }
       }
       return 'yes';
-    };
+   };
     // eslint-disable-next-line no-unused-vars
     const result = getPrime();
 // eslint-disable-next-line no-console
