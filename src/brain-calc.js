@@ -9,22 +9,18 @@ const getResult = (a, action, b) => {
   if (action === '-') {
     return a - b;
   }
-  if (action === '*') {
-    return a * b;
-  }
+  return a * b;
 };
 const getRandomNum = () => Math.round(Math.random() * 100);
 function getAction() {
   const act = Math.floor(Math.random() * 3);
   if (act === 0) {
     return '+';
-    }
+  }
   if (act === 1) {
     return '-';
-  };
-  if (act === 2) {
-    return '*';
   }
+  return '*';
 }
 function play() {
   const name = welcome();
@@ -38,8 +34,8 @@ function play() {
     questions.push(`Question: ${a} ${action} ${b}`);
     answers.push(`${getResult(a, action, b)}`);
   }
-console.log('What is the result of the expression?');
-startRound(questions, answers, name); 
+  console.log('What is the result of the expression?');
+  startRound(questions, answers, name);
 }
 
 export default play;

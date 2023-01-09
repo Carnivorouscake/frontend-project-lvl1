@@ -1,4 +1,4 @@
-import readlineSync, {question} from 'readline-sync';
+import readlineSync from 'readline-sync';
 
 function isCorrectAnswer(isEvenString, answer, name) {
   if (answer.toLowerCase() === isEvenString) {
@@ -24,4 +24,4 @@ const startRound = (questions, answers, name) => {
     console.log(`Congratulations, ${name}!`);
   }
 };
-export {isCorrectAnswer, startRound};
+export { isCorrectAnswer, startRound };

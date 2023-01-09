@@ -5,19 +5,21 @@ import welcome from './index.js';
 const getRandomNum = () => Math.round(Math.random() * 100);
 const sort = (a, b) => {
   if (a < b) {
-  return [a, b];
+    return [a, b];
   }
   return [b, a];
 };
 const greatestDivisor = (mass) => {
   let first = mass[0];
   let second = mass[1];
-  while (true) {
-    const temp = second % first;
-    if (temp === 0) return first;
+
+  let temp;
+  do {
+    temp = second % first;
     second = first;
     first = temp;
-  }
+  } while (temp !== 0);
+  return second;
 };
 
 function play() {
@@ -25,7 +27,7 @@ function play() {
   const questions = [];
   const answers = [];
 
-for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < 3; i += 1) {
     const a = getRandomNum();
     const b = getRandomNum();
     const mass = sort(a, b);

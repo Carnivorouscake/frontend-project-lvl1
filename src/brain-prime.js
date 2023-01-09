@@ -14,11 +14,10 @@ const getPrime = (num) => {
   }
   for (let index = 2; num > index; index += 1) {
     if (num % index === 0) {
-     return 'no';
-    } 
-  }   
+      return 'no';
+    }
+  }
   return 'yes';
-  
 };
 function play() {
   const name = welcome();
@@ -30,7 +29,7 @@ function play() {
     answers.push(getPrime(num));
   }
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  startRound(questions, answers, name)
+  startRound(questions, answers, name);
 }
 
 export default play;

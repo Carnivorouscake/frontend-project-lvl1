@@ -12,11 +12,11 @@ function play() {
   function isEven(num) {
     if (num % 2 === 0) {
       return 'yes';
-      }
+    }
     return 'no';
   }
   for (let i = 0; i < 3; i += 1) {
-    const num = getRandomNum()
+    const num = getRandomNum();
     questions.push(`Question: ${num}`);
     answers.push(isEven(num));
   }
