@@ -36,5 +36,4 @@ for (let i = 0; i < 3; i += 1) {
   console.log('Find the greatest common divisor of given numbers.');
   startRound(questions, answers, name);
 }
-
 export default play;
