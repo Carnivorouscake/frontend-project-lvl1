@@ -1,58 +1,36 @@
-#!/usr/bin/env node
-/* eslint-disable no-plusplus */
-// eslint-disable-next-line import/no-extraneous-dependencies
-import readlineSync from 'readline-sync';
-// eslint-disable-next-line import/no-unresolved, import/extensions
+import {isCorrectAnswer, startRound} from './utils.js';
+
 import welcome from './index.js';
 
-const name = welcome();
-
-const startRound = () => {
-  // eslint-disable-next-line no-console
+function getRandomNum() {
+      return Math.round(Math.random() * 10) + 1;
+  }
+  const getPrime = (num) => {
+  if (num < 2) {
+    return 'no';
+  }
+  if (num === 2) {
+    return 'yes';
+  }
+  for (let index = 2; num > index; index += 1) {
+    if (num % index === 0) {
+      return 'no';
+    }    
+    return 'yes';
+  }
+}
+function play (){
+  const name = welcome();
+  let questions = []
+  let answers = []
+  
+  for (let i = 0; i < 3; i += 1) {
+     const num = getRandomNum();
+      questions.push(`Question: ${num}`)
+      answers.push(getPrime(num))
+     }
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  // eslint-disable-next-line no-unused-vars
-  function getRandomNum() {
-    return Math.round(Math.random() * 10) + 1;
-  }
-  let flag = false;
-  for (let i = 0; i < 3; i++) {
-    const num = getRandomNum();
-    const getPrime = () => {
-      if (num < 2) {
-        return 'no';
-      }
-      for (let index = 2; num > index; index += 1) {
-        if (num % index === 0) {
-          return 'no';
-        }
-      }
-      return 'yes';
-    };
-    // eslint-disable-next-line no-unused-vars
-    const result = getPrime();
-    // eslint-disable-next-line no-console
-    console.log(`Question: ${num}`);
-    const answer = readlineSync.question('Your answer:');
-    // eslint-disable-next-line no-shadow
-    const getAnswer = (answer, result) => {
-      if (answer === result) {
-      // eslint-disable-next-line no-console
-        console.log('Correct!');
-        return true;
-      }
-      // eslint-disable-next-line no-console
-      console.log(`Question:${num} \nYour answer: ${answer} \n'${answer}' is wrong answer ;(. Correct answer was '${result}' \nLet's try again, ${name}!`);
-      return false;
-    };
-    const isCorrect = getAnswer(answer, result);
-    if (!isCorrect) {
-      flag = true;
-      return;
-    }
-  }
-  if (flag === false) {
-    // eslint-disable-next-line no-console
-    console.log(`Congratulations, ${name}!`);
-  }
+  startRound(questions, answers, name)
 };
-export default startRound;
+
+export default play;

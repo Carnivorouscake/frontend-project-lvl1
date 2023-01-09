@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-// eslint-disable-next-line import/extensions
-import startRound from '../src/brain-gcd.js';
+import play from '../src/brain-gcd.js';
 
-startRound();
+play();
