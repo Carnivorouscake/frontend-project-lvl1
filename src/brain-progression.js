@@ -1,4 +1,4 @@
-import {isCorrectAnswer, startRound} from './utils.js';
+import { startRound } from './utils.js';
 
 import welcome from './index.js';
 
@@ -16,22 +16,21 @@ const getArrow = (num, step) => {
   }
   return result;
 };
-function play(){
+function play() {
   const name = welcome();
-  let questions = [];
-  let answers = [];
-  for(let i = 0; i < 3; i += 1) {
+  const questions = [];
+  const answers = [];
+  for (let i = 0; i < 3; i += 1) {
     const num = getRandomNum();
     const step = getStep();
     const ethalon = getArrow(num, step);
     const hole = Math.round(Math.random() * 10);
     const ethalonAnswer = ethalon[hole];
     const str = ethalon.map((x, index) => (index === hole ? '..' : x)).join(' ');
-  questions.push(`Question: ${str}`);
-  answers.push(`${ethalonAnswer}`);
+    questions.push(`Question: ${str}`);
+    answers.push(`${ethalonAnswer}`);
   }
-  console.log('What number is missing in the progression?')
+  console.log('What number is missing in the progression?');
   startRound(questions, answers, name);
-};
-
+}
 export default play;

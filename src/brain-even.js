@@ -1,27 +1,27 @@
 import welcome from './index.js';
 
-import {isCorrectAnswer, startRound} from './utils.js';
+import { startRound } from './utils.js';
 
-function play () {
+function play() {
   const name = welcome();
-  let questions = []
-  let answers = []
+  const questions = [];
+  const answers = [];
   function getRandomNum() {
-      return Math.round(Math.random() * 100);
+    return Math.round(Math.random() * 100);
   }
   function isEven(num) {
-      if (num % 2 === 0) {
-          return 'yes';
+    if (num % 2 === 0) {
+      return 'yes';
       }
-      return 'no';
+    return 'no';
   }
   for (let i = 0; i < 3; i += 1) {
-      let num = getRandomNum()
-      questions.push(`Question: ${num}`)
-      answers.push(isEven(num))
+    const num = getRandomNum()
+    questions.push(`Question: ${num}`);
+    answers.push(isEven(num));
   }
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  startRound(questions, answers, name)
+  startRound(questions, answers, name);
 }
 
 export default play;

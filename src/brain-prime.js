@@ -1,11 +1,11 @@
-import {isCorrectAnswer, startRound} from './utils.js';
+import { startRound } from './utils.js';
 
 import welcome from './index.js';
 
 function getRandomNum() {
-      return Math.round(Math.random() * 10) + 1;
-  }
-  const getPrime = (num) => {
+  return Math.round(Math.random() * 10) + 1;
+}
+const getPrime = (num) => {
   if (num < 2) {
     return 'no';
   }
@@ -14,23 +14,22 @@ function getRandomNum() {
   }
   for (let index = 2; num > index; index += 1) {
     if (num % index === 0) {
-      return 'no';
+     return 'no';
     }    
     return 'yes';
   }
-}
-function play (){
+};
+function play() {
   const name = welcome();
-  let questions = []
-  let answers = []
-  
+  const questions = [];
+  const answers = [];
   for (let i = 0; i < 3; i += 1) {
-     const num = getRandomNum();
-      questions.push(`Question: ${num}`)
-      answers.push(getPrime(num))
-     }
+    const num = getRandomNum();
+    questions.push(`Question: ${num}`);
+    answers.push(getPrime(num));
+  }
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   startRound(questions, answers, name)
-};
+}
 
 export default play;

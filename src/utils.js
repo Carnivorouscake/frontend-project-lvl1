@@ -1,6 +1,4 @@
-import welcome from './index.js';
-
-import readlineSync, { question } from 'readline-sync';
+import readlineSync, {question} from 'readline-sync';
 
 function isCorrectAnswer(isEvenString, answer, name) {
   if (answer.toLowerCase() === isEvenString) {
@@ -12,10 +10,9 @@ function isCorrectAnswer(isEvenString, answer, name) {
 }
 const startRound = (questions, answers, name) => {
   let flag = false;
-
   for (let i = 0; i < questions.length; i += 1) {
-    let question = questions[i];
-    console.log(question);
+    const quest = questions[i];
+    console.log(quest);
     const answer = readlineSync.question('Your answer:');
     const isCorrect = isCorrectAnswer(answers[i], answer, name);
     if (!isCorrect) {
@@ -27,5 +24,4 @@ const startRound = (questions, answers, name) => {
     console.log(`Congratulations, ${name}!`);
   }
 };
-export {isCorrectAnswer, startRound} ;
-
+export {isCorrectAnswer, startRound};
