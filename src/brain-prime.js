@@ -15,9 +15,10 @@ const getPrime = (num) => {
   for (let index = 2; num > index; index += 1) {
     if (num % index === 0) {
      return 'no';
-    }    
-    return 'yes';
-  }
+    } 
+  }   
+  return 'yes';
+  
 };
 function play() {
   const name = welcome();
