@@ -35,7 +35,7 @@ function play (){
     const action = getAction();
     const a = getRandomNum();
     const b = getRandomNum();
-    questions.push(`Question: ${a}${action}${b}`);
+    questions.push(`Question: ${a} ${action} ${b}`);
     answers.push(`${getResult(a, action, b)}`)
   }
       console.log('What is the result of the expression?');
