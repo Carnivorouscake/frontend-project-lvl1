@@ -1,4 +1,6 @@
-import { runGame } from './utils.js';
+import { getRandomNum } from './utils.js';
+
+import { runGame } from './index.js';
 
 const calculate = (a, action, b) => {
   switch (action) {
@@ -11,22 +13,23 @@ const calculate = (a, action, b) => {
   }
 };
 
-const getRandomNum = (start, end) => start + Math.round(Math.random() * (end - start));
 
 const play = () => {
-  const questions = [];
-  const answers = [];
+  // const questions = [];
+  // const answers = [];
+  const round = [];
 
   for (let i = 0; i < 3; i += 1) {
     const arr = ['+', '-', '*'];
     const action = arr[getRandomNum(0, 2)];
     const a = getRandomNum(1, 10);
     const b = getRandomNum(1, 10);
-    questions.push(`Question: ${a} ${action} ${b}`);
-    answers.push(`${calculate(a, action, b)}`);
+    round[i] = [];
+    round[i].question = `${a} ${action} ${b}`;
+    round[i].answer = `${calculate(a, action, b)}`;
   }
-  console.log('What is the result of the expression?');
-  runGame(questions, answers);
+  const description = 'What is the result of the expression?';
+  runGame(round, description);
 };
 
 export default play;

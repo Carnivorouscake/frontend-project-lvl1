@@ -1,17 +1,18 @@
-import { isEven, runGame } from './utils.js';
+import { isEven, getRandomNum } from './utils.js';
+
+import { runGame } from './index.js';
 
 function play() {
-  const questions = [];
-  const answers = [];
-  const getRandomNum = (start, end) => start + Math.round(Math.random() * (end - start));
+  const round = [];
   for (let i = 0; i < 3; i += 1) {
     const num = getRandomNum(1, 100);
     const expectedAnswer = isEven(num) ? 'yes' : 'no';
-    questions.push(`Question: ${num}`);
-    answers.push(expectedAnswer);
+    round[i] = [];
+    round[i].question = `${num}`;
+    round[i].answer = `${expectedAnswer}`;
   }
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  runGame(questions, answers);
+  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+  runGame(round, description);
 }
 
 export default play;

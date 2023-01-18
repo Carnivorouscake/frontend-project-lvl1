@@ -1,6 +1,6 @@
-import { runGame } from './utils.js';
+import { getRandomNum } from './utils.js';
 
-const getRandomNum = (start, end) => start + Math.round(Math.random() * (end - start));
+import { runGame } from './index.js';
 
 const getArrow = (num, step) => {
   const result = [];
@@ -14,8 +14,7 @@ const getArrow = (num, step) => {
   return result;
 };
 const play = () => {
-  const questions = [];
-  const answers = [];
+  const round = [];
   for (let i = 0; i < 3; i += 1) {
     const num = getRandomNum(1, 100);
     const step = getRandomNum(1, 9);
@@ -23,10 +22,11 @@ const play = () => {
     const hole = getRandomNum(1, 9);
     const ethalonAnswer = ethalon[hole];
     const str = ethalon.map((x, index) => (index === hole ? '..' : x)).join(' ');
-    questions.push(`Question: ${str}`);
-    answers.push(`${ethalonAnswer}`);
+    round[i] = [];
+    round[i].question = `${str}`;
+    round[i].answer = `${ethalonAnswer}`;
   }
-  console.log('What number is missing in the progression?');
-  runGame(questions, answers);
+  const description = 'What number is missing in the progression?';
+  runGame(round, description);
 };
 export default play;
