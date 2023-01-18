@@ -2,6 +2,6 @@
 
 import readlineSync from 'readline-sync';
 
-import sayHello from '../src/cli.js';
+import sayHello from '../src/index.js';
 
 sayHello(readlineSync);
