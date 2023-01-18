@@ -20,7 +20,7 @@ const play = () => {
     const num = getRandomNum(1, 100);
     const step = getRandomNum(1, 9);
     const ethalon = getArrow(num, step);
-    const hole = getRandomNum(1, 10);
+    const hole = getRandomNum(1, 9);
     const ethalonAnswer = ethalon[hole];
     const str = ethalon.map((x, index) => (index === hole ? '..' : x)).join(' ');
     questions.push(`Question: ${str}`);

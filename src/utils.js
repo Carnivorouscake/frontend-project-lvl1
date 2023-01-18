@@ -1,6 +1,4 @@
-import readlineSync from 'readline-sync';
-
-import welcome from './index.js';
+import { welcome, readlineSync } from './index.js';
 
 const isEven = (num) => num % 2 === 0;
 const runGame = (questions, answers) => {
@@ -20,6 +18,5 @@ const runGame = (questions, answers) => {
   }
   console.log(`Congratulations, ${name}!`);
 };
-export default runGame;
 
-export { isEven };
+export { isEven, runGame };

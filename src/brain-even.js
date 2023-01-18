@@ -1,6 +1,4 @@
-import runGame from './utils.js';
-
-import { isEven } from './utils.js';
+import { isEven, runGame } from './utils.js';
 
 function play() {
   const questions = [];
