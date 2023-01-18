@@ -1,13 +1,12 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "",
-  "main": "brain-games.js",
+  "description": "5 arithmetic games",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Elena Lazareva",
   "license": "ISC",
   "bin": {
     "brain-games": "bin/brain-games.js",

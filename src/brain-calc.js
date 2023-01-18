@@ -1,41 +1,32 @@
-import welcome from './index.js';
+import runGame from './utils.js';
 
-import { startRound } from './utils.js';
-
-const getResult = (a, action, b) => {
-  if (action === '+') {
-    return a + b;
+const calculate = (a, action, b) => {
+  switch (action) {
+    case '+':
+      return a + b;
+    case '-':
+      return a - b;
+    default:
+      return a * b;
   }
-  if (action === '-') {
-    return a - b;
-  }
-  return a * b;
 };
-const getRandomNum = () => Math.round(Math.random() * 100);
-function getAction() {
-  const act = Math.floor(Math.random() * 3);
-  if (act === 0) {
-    return '+';
-  }
-  if (act === 1) {
-    return '-';
-  }
-  return '*';
-}
-function play() {
-  const name = welcome();
+
+const getRandomNum = (start, end) => start + Math.round(Math.random() * (end - start));
+
+const play = () => {
   const questions = [];
   const answers = [];
 
   for (let i = 0; i < 3; i += 1) {
-    const action = getAction();
-    const a = getRandomNum();
-    const b = getRandomNum();
+    const arr = ['+', '-', '*'];
+    const action = arr[getRandomNum(0, 2)];
+    const a = getRandomNum(1, 10);
+    const b = getRandomNum(1, 10);
     questions.push(`Question: ${a} ${action} ${b}`);
-    answers.push(`${getResult(a, action, b)}`);
+    answers.push(`${calculate(a, action, b)}`);
   }
   console.log('What is the result of the expression?');
-  startRound(questions, answers, name);
-}
+  runGame(questions, answers);
+};
 
 export default play;

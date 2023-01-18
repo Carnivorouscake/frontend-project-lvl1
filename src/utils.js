@@ -1,27 +1,25 @@
 import readlineSync from 'readline-sync';
 
-function isCorrectAnswer(isEvenString, answer, name) {
-  if (answer.toLowerCase() === isEvenString) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`${answer} is wrong answer ;(. Correct answer was ${isEvenString} \nLet's try again, ${name}!`);
-  return false;
-}
-const startRound = (questions, answers, name) => {
-  let flag = false;
+import welcome from './index.js';
+
+const isEven = (num) => num % 2 === 0;
+const runGame = (questions, answers) => {
+  const name = welcome();
   for (let i = 0; i < questions.length; i += 1) {
     const quest = questions[i];
     console.log(quest);
     const answer = readlineSync.question('Your answer:');
-    const isCorrect = isCorrectAnswer(answers[i], answer, name);
-    if (!isCorrect) {
-      flag = true;
+
+    if (answer.toLowerCase() === answers[i]) {
+      console.log('Correct!');
+    } else {
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${answers[i]}`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
   }
-  if (!flag) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  console.log(`Congratulations, ${name}!`);
 };
-export { isCorrectAnswer, startRound };
+export default runGame;
+
+export { isEven };

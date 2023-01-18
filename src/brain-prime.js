@@ -1,35 +1,34 @@
-import { startRound } from './utils.js';
+import runGame from './utils.js';
 
-import welcome from './index.js';
-
-function getRandomNum() {
-  return Math.round(Math.random() * 10) + 1;
-}
-const getPrime = (num) => {
+const getRandomNum = (start, end) => start + Math.round(Math.random() * (end - start));
+const isPrime = (num) => {
   if (num < 2) {
-    return 'no';
+    return false;
   }
   if (num === 2) {
-    return 'yes';
+    return true;
   }
   for (let index = 2; num > index; index += 1) {
     if (num % index === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
-function play() {
-  const name = welcome();
+const play = () => {
   const questions = [];
   const answers = [];
   for (let i = 0; i < 3; i += 1) {
-    const num = getRandomNum();
+    const num = getRandomNum(1, 100);
     questions.push(`Question: ${num}`);
-    answers.push(getPrime(num));
+    if (isPrime(num)) {
+      answers.push('yes');
+    } else {
+      answers.push('no');
+    }
   }
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  startRound(questions, answers, name);
-}
+  runGame(questions, answers);
+};
 
 export default play;
