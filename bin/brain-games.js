@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
+import { welcome, readlineSync } from '../src/index.js';
 
-import sayHello from '../src/index.js';
-
-sayHello(readlineSync);
+welcome(readlineSync);
