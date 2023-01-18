@@ -13,7 +13,6 @@ const calculate = (a, action, b) => {
   }
 };
 
-
 const play = () => {
   // const questions = [];
   // const answers = [];
