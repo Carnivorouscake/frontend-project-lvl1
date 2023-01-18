@@ -3,8 +3,9 @@
 
 
 <a href="https://codeclimate.com/github/Carnivorouscake/frontend-project-lvl1/maintainability">
-  <img src="https://api.codeclimate.com/v1/badges/1f754f47efdd2a05b631/maintainability" /></a> 
-  
+  <img src="https://api.codeclimate.com/v1/badges/1f754f47efdd2a05b631/maintainability" /></a>
+
+ this is arythmetic games type answer-qestion 
  brain-even:
 [![asciicast](https://asciinema.org/a/5fskW9H5yzsWCit3xfCKmNslZ.svg)](https://asciinema.org/a/5fskW9H5yzsWCit3xfCKmNslZ)
 brain-calc:

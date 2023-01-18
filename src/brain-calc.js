@@ -1,4 +1,4 @@
-import runGame from './utils.js';
+import { runGame } from './utils.js';
 
 const calculate = (a, action, b) => {
   switch (action) {

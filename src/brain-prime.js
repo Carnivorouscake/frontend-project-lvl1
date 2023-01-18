@@ -1,4 +1,4 @@
-import runGame from './utils.js';
+import { runGame } from './utils.js';
 
 const getRandomNum = (start, end) => start + Math.round(Math.random() * (end - start));
 const isPrime = (num) => {
