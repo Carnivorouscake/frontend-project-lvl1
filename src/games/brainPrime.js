@@ -22,11 +22,11 @@ const play = () => {
   for (let i = 0; i < 3; i += 1) {
     const num = getRandomNum(1, 100);
     rounds[i] = [];
-    rounds[i].question = `${num}`;
+    rounds[i][0] = `${num}`;
     if (isPrime(num)) {
-      rounds[i].answer = 'yes';
+      rounds[i][1] = 'yes';
     } else {
-      rounds[i].answer = 'no';
+      rounds[i][1] = 'no';
     }
   }
   runGame(rounds, 'Answer "yes" if given number is prime. Otherwise answer "no".');

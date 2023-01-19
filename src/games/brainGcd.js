@@ -31,7 +31,7 @@ const play = () => {
     const mass = sort(a, b);
     const answer = greatestDivisor(mass);
     rounds[i] = [];
-    [rounds[i].answer, rounds[i].question] = [`${answer}`, `${a} ${b}`];
+    [rounds[i][1], rounds[i][0]] = [`${answer}`, `${a} ${b}`];
   }
   runGame(rounds, 'Find the greatest common divisor of given numbers.');
 };

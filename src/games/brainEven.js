@@ -10,7 +10,7 @@ function play() {
     const num = getRandomNum(1, 100);
     const expectedAnswer = isEven(num) ? 'yes' : 'no';
     rounds[i] = [];
-    [rounds[i].question, rounds[i].answer] = [`${num}`, `${expectedAnswer}`];
+    [rounds[i][0], rounds[i][1]] = [`${num}`, `${expectedAnswer}`];
   }
 
   runGame(rounds, 'Answer "yes" if the number is even, otherwise answer "no".');
