@@ -29,7 +29,7 @@ const play = () => {
       rounds[i].answer = 'no';
     }
   }
-  runGame(rounds, 'prime');
+  runGame(rounds, 'Answer "yes" if given number is prime. Otherwise answer "no".');
 };
 
 export default play;

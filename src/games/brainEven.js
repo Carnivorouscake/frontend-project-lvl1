@@ -13,7 +13,7 @@ function play() {
     [rounds[i].question, rounds[i].answer] = [`${num}`, `${expectedAnswer}`];
   }
 
-  runGame(rounds, 'even');
+  runGame(rounds, 'Answer "yes" if the number is even, otherwise answer "no".');
 }
 
 export default play;

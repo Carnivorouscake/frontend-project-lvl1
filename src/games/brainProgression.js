@@ -28,6 +28,6 @@ const play = () => {
     rounds[i].question = `${str}`;
     rounds[i].answer = `${progressionAnswer}`;
   }
-  runGame(rounds, 'progression');
+  runGame(rounds, 'What number is missing in the progression?');
 };
 export default play;

@@ -27,7 +27,7 @@ const play = () => {
     //деструктуризация по просьбе ментора
     [rounds[i].question, rounds[i].answer] = [`${a} ${action} ${b}`, `${calculate(a, action, b)}`];
   }
-  runGame(rounds, 'calc');
+  runGame(rounds, 'What is the result of the expression?');
 };
 
 export default play;

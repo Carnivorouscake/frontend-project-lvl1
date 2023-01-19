@@ -33,7 +33,7 @@ const play = () => {
     rounds[i] = [];
     [rounds[i].answer, rounds[i].question] = [`${answer}`, `${a} ${b}`]
   }
-  runGame(rounds, 'gcd');
+  runGame(rounds, 'Find the greatest common divisor of given numbers.');
 };
 
 export default play;
