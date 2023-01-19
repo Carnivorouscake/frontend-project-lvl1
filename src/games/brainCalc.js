@@ -1,4 +1,4 @@
-import { getRandomNum } from '../utils.js';
+import getRandomNum from '../utils.js';
 
 import { runGame } from '../index.js';
 
@@ -24,7 +24,9 @@ const play = () => {
     const a = getRandomNum(1, 10);
     const b = getRandomNum(1, 10);
     rounds[i] = [];
-    //деструктуризация по просьбе ментора
+
+//деструктуризация по просьбе ментора
+
     [rounds[i].question, rounds[i].answer] = [`${a} ${action} ${b}`, `${calculate(a, action, b)}`];
   }
   runGame(rounds, 'What is the result of the expression?');
