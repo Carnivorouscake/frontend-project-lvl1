@@ -1,6 +1,6 @@
-import { getRandomNum } from './utils.js';
+import { getRandomNum } from '../utils.js';
 
-import { runGame } from './index.js';
+import { runGame } from '../index.js';
 
 const sort = (a, b) => {
   if (a < b) {
@@ -23,19 +23,17 @@ const greatestDivisor = (mass) => {
 };
 
 const play = () => {
-  const round = [];
+  const rounds = [];
 
   for (let i = 0; i < 3; i += 1) {
     const a = getRandomNum(1, 20);
     const b = getRandomNum(1, 20);
     const mass = sort(a, b);
     const answer = greatestDivisor(mass);
-    round[i] = [];
-    round[i].answer = `${answer}`;
-    round[i].question = `${a} ${b}`;
+    rounds[i] = [];
+    [rounds[i].answer, rounds[i].question] = [`${answer}`, `${a} ${b}`]
   }
-  const description = 'Find the greatest common divisor of given numbers.';
-  runGame(round, description);
+  runGame(rounds, 'gcd');
 };
 
 export default play;
