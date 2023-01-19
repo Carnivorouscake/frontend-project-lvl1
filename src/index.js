@@ -7,11 +7,11 @@ const runGame = (rounds, description) => {
   console.log(description);
 
   for (let i = 0; i < rounds.length; i += 1) {
-    console.log(`Question: ${rounds[i].question}`);
+    console.log(`Question: ${rounds[i][0]}`);
     const answer = readlineSync.question('Your answer:');
 
-    if (answer.toLowerCase() !== rounds[i].answer) {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${rounds[i].answer}`);
+    if (answer.toLowerCase() !== rounds[i][1]) {
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${rounds[i][1]}`);
       console.log(`Let's try again, ${name}!`);
       return;
     }

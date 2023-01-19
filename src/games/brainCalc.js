@@ -23,8 +23,10 @@ const play = () => {
     const action = arr[getRandomNum(0, arr.length - 1)];
     const a = getRandomNum(1, 10);
     const b = getRandomNum(1, 10);
-    rounds[i] = [];
-    [rounds[i].question, rounds[i].answer] = [`${a} ${action} ${b}`, `${calculate(a, action, b)}`];
+    const question = `${a} ${action} ${b}`;
+    const answer = `${calculate(a, action, b)}`;
+    const round = [question, answer];
+    rounds.push(round);
   }
   runGame(rounds, 'What is the result of the expression?');
 };
