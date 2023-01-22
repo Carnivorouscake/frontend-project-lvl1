@@ -11,7 +11,7 @@ const calculate = (a, action, b) => {
     case '*':
       return a * b;
     default:
-      throw new Error('Unknown action!');
+      throw new Error('Unknown action: ${action}');
   }
 };
 
