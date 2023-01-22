@@ -2,15 +2,15 @@ import getRandomNum from '../utils.js';
 
 import { runGame } from '../index.js';
 
-const isPrime = (num) => {
-  if (num < 2) {
+const isPrime = (number) => {
+  if (number < 2) {
     return false;
   }
-  if (num === 2) {
+  if (number === 2) {
     return true;
   }
-  for (let index = 2; num > index; index += 1) {
-    if (num % index === 0) {
+  for (let index = 2; number > index; index += 1) {
+    if (number % index === 0) {
       return false;
     }
   }
@@ -20,14 +20,16 @@ const isPrime = (num) => {
 const play = () => {
   const rounds = [];
   for (let i = 0; i < 3; i += 1) {
-    const num = getRandomNum(1, 100);
-    rounds[i] = [];
-    rounds[i][0] = `${num}`;
-    if (isPrime(num)) {
-      rounds[i][1] = 'yes';
+    const number = getRandomNum(1, 100);
+    const question = `${number}`;
+    let answer = '';
+    if (isPrime(number)) {
+      answer = 'yes';
     } else {
-      rounds[i][1] = 'no';
+      answer = 'no';
     }
+    const round = [question, answer];
+    rounds.push(round);
   }
   runGame(rounds, 'Answer "yes" if given number is prime. Otherwise answer "no".');
 };

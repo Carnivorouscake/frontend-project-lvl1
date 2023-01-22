@@ -11,7 +11,7 @@ const calculate = (a, action, b) => {
     case '*':
       return a * b;
     default:
-      throw new Error('Unknown action: ${action}');
+      throw new Error(`Unknown action: ${action}`);
   }
 };
 
@@ -19,8 +19,8 @@ const play = () => {
   const rounds = [];
 
   for (let i = 0; i < 3; i += 1) {
-    const arr = ['+', '-', '*'];
-    const action = arr[getRandomNum(0, arr.length - 1)];
+    const operators = ['+', '-', '*'];
+    const action = operators[getRandomNum(0, operators.length - 1)];
     const a = getRandomNum(1, 10);
     const b = getRandomNum(1, 10);
     const question = `${a} ${action} ${b}`;
