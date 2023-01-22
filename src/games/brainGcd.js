@@ -30,8 +30,9 @@ const play = () => {
     const b = getRandomNum(1, 20);
     const mass = sort(a, b);
     const answer = greatestDivisor(mass);
-    rounds[i] = [];
-    [rounds[i][1], rounds[i][0]] = [`${answer}`, `${a} ${b}`];
+    const question = `${a} ${b}`;
+    const round = [question, `${answer}`];
+    rounds.push(round);
   }
   runGame(rounds, 'Find the greatest common divisor of given numbers.');
 };

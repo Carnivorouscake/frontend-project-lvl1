@@ -2,12 +2,12 @@ import getRandomNum from '../utils.js';
 
 import { runGame } from '../index.js';
 
+import { question } from 'readline-sync';
+
 const getArrow = (num, step, progressionLength) => {
   const result = [];
-  let index = 0;
   let item = num;
-  while (index < progressionLength) {
-    index += 1;
+  for (let index = 0;index < progressionLength; index += 1) {
     item += step;
     result.push(item);
   }
@@ -25,6 +25,8 @@ const play = () => {
     const progressionAnswer = progression[hole];
     const str = progression.map((x, index) => (index === hole ? '..' : x)).join(' ');
     rounds[i] = [];
+    // rounds[i][question] = `${str}`;
+    // rounds[i][answer] = `${progressionAnswer}`
     rounds[i][0] = `${str}`;
     rounds[i][1] = `${progressionAnswer}`;
   }
