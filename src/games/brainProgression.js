@@ -2,14 +2,12 @@ import getRandomNum from '../utils.js';
 
 import { runGame } from '../index.js';
 
-import { question } from 'readline-sync';
-
 const getArrow = (num, step, progressionLength) => {
   const result = [];
   let item = num;
   for (let index = 0;index < progressionLength; index += 1) {
     item += step;
-    result.push(item);
+    result.push(item); 
   }
   return result;
 };
