@@ -22,11 +22,10 @@ const play = () => {
     const hole = getRandomNum(1, progressionLength - 1);
     const progressionAnswer = progression[hole];
     const str = progression.map((x, index) => (index === hole ? '..' : x)).join(' ');
-    rounds[i] = [];
-    // rounds[i][question] = `${str}`;
-    // rounds[i][answer] = `${progressionAnswer}`
-    rounds[i][0] = `${str}`;
-    rounds[i][1] = `${progressionAnswer}`;
+    const answer = `${progressionAnswer}`;
+    const question = `${str}`;
+    const round = [question, answer];
+    rounds.push(round);
   }
   runGame(rounds, 'What number is missing in the progression?');
 };
