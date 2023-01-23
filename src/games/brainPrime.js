@@ -16,7 +16,7 @@ const isPrime = (number) => {
   }
   return true;
 };
-
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const play = () => {
   const rounds = [];
   for (let i = 0; i < 3; i += 1) {
@@ -31,7 +31,7 @@ const play = () => {
     const round = [question, answer];
     rounds.push(round);
   }
-  runGame(rounds, 'Answer "yes" if given number is prime. Otherwise answer "no".');
+  runGame(rounds, description);
 };
 
 export default play;

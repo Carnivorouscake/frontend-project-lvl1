@@ -1,7 +1,7 @@
 import getRandomNum from '../utils.js';
 
 import { runGame } from '../index.js';
-
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 const isEven = (num) => num % 2 === 0;
 
 function play() {
@@ -15,7 +15,7 @@ function play() {
     rounds.push(round);
   }
 
-  runGame(rounds, 'Answer "yes" if the number is even, otherwise answer "no".');
+  runGame(rounds, description);
 }
 
 export default play;

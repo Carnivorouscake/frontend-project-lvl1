@@ -21,7 +21,7 @@ const greatestDivisor = (mass) => {
   } while (temp !== 0);
   return second;
 };
-
+const description = 'Find the greatest common divisor of given numbers.';
 const play = () => {
   const rounds = [];
 
@@ -34,7 +34,7 @@ const play = () => {
     const round = [question, answer];
     rounds.push(round);
   }
-  runGame(rounds, 'Find the greatest common divisor of given numbers.');
+  runGame(rounds, description);
 };
 
 export default play;
