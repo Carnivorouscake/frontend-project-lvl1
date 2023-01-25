@@ -28,8 +28,8 @@ const play = () => {
   for (let i = 0; i < 3; i += 1) {
     const a = getRandomNum(1, 20);
     const b = getRandomNum(1, 20);
-    const mass = sort(a, b);
-    const answer = greatestDivisor(mass).toString();
+    const array = sort(a, b);
+    const answer = greatestDivisor(array).toString();
     const question = `${a} ${b}`;
     const round = [question, answer];
     rounds.push(round);
