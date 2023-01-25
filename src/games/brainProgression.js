@@ -11,21 +11,21 @@ const getProgression = (number, step, length) => {
   }
   return result;
 };
-const description = 'What number is missing in the progression?';
-const play = () => {
+const playRound = () => {
   const length = 10;
-  const rounds = [];
-  for (let i = 0; i < 3; i += 1) {
-    const number = getRandomNum(1, 100);
-    const step = getRandomNum(1, 9);
-    const progression = getProgression(number, step, length);
-    const hole = getRandomNum(1, progression.length - 1);
-    const progressionAnswer = progression[hole];
-    const question = progression.map((x, index) => (index === hole ? '..' : x)).join(' ').toString();
-    const answer = `${progressionAnswer}`;
-    const round = [question, answer];
-    rounds.push(round);
-  }
-  runGame(rounds, description);
+  const number = getRandomNum(1, 100);
+  const step = getRandomNum(1, 9);
+  const progression = getProgression(number, step, length);
+  const hole = getRandomNum(1, progression.length - 1);
+  const progressionAnswer = progression[hole];
+  const question = progression.map((x, index) => (index === hole ? '..' : x)).join(' ').toString();
+  const answer = `${progressionAnswer}`;
+  const round = [question, answer];
+    return round;
+  };
+
+const play = () => {
+  const description = 'What number is missing in the progression?';
+  runGame(description, playRound);
 };
 export default play;

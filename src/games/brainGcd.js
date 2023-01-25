@@ -21,20 +21,20 @@ const greatestDivisor = (mass) => {
   } while (temp !== 0);
   return second;
 };
-const description = 'Find the greatest common divisor of given numbers.';
-const play = () => {
-  const rounds = [];
 
-  for (let i = 0; i < 3; i += 1) {
+const playRound = () => {
     const a = getRandomNum(1, 20);
     const b = getRandomNum(1, 20);
     const array = sort(a, b);
     const answer = greatestDivisor(array).toString();
     const question = `${a} ${b}`;
     const round = [question, answer];
-    rounds.push(round);
-  }
-  runGame(rounds, description);
+    return round;
+};
+
+const play = () => {
+  const description = 'Find the greatest common divisor of given numbers.';
+  runGame(description, playRound);
 };
 
 export default play;
