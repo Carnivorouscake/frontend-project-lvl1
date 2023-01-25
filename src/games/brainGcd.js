@@ -23,13 +23,13 @@ const greatestDivisor = (mass) => {
 };
 
 const playRound = () => {
-    const a = getRandomNum(1, 20);
-    const b = getRandomNum(1, 20);
-    const array = sort(a, b);
-    const answer = greatestDivisor(array).toString();
-    const question = `${a} ${b}`;
-    const round = [question, answer];
-    return round;
+  const a = getRandomNum(1, 20);
+  const b = getRandomNum(1, 20);
+  const array = sort(a, b);
+  const answer = greatestDivisor(array).toString();
+  const question = `${a} ${b}`;
+  const round = [question, answer];
+  return round;
 };
 
 const play = () => {

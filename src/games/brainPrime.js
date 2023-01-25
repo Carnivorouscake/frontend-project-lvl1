@@ -23,8 +23,8 @@ const playRound = () => {
   if (isPrime(number)) {
     answer = 'yes';
   } else {
-     answer = 'no';
-   }
+    answer = 'no';
+  }
   const round = [question, answer];
   return round;
 };

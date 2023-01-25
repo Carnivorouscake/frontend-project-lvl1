@@ -21,8 +21,8 @@ const playRound = () => {
   const question = progression.map((x, index) => (index === hole ? '..' : x)).join(' ').toString();
   const answer = `${progressionAnswer}`;
   const round = [question, answer];
-    return round;
-  };
+  return round;
+};
 
 const play = () => {
   const description = 'What number is missing in the progression?';
