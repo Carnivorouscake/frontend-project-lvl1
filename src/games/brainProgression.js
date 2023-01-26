@@ -17,9 +17,8 @@ const playRound = () => {
   const step = getRandomNum(1, 9);
   const progression = getProgression(number, step, length);
   const hole = getRandomNum(1, progression.length - 1);
-  const progressionAnswer = progression[hole];
+  const answer = progression[hole].toString();
   const question = progression.map((x, index) => (index === hole ? '..' : x)).join(' ').toString();
-  const answer = `${progressionAnswer}`;
   const round = [question, answer];
   return round;
 };
